@@ -346,7 +346,7 @@ function drawResults() {
             text(passenger_data[i].price / distancePerTrip, margin + 3 * (column_width + margin) + column_width / 2, y_position)
         }
 
-        text(-passenger_data[i].debt + " €", margin + 4 * (column_width + margin) + column_width / 2, y_position)
+        text(-Math.round((passenger_data[i].debt + 0.00001) * 100) / 100 + " €", margin + 4 * (column_width + margin) + column_width / 2, y_position)
         textAlign(LEFT)
     }
 
