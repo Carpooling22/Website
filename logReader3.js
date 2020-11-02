@@ -22,13 +22,20 @@ let beginTime = 0, endTime = 0
 var passenger_data = [
     Bob = {
         name: "Bob",
-        price: 0.18 * distancePerTrip,
+        price: 0.20 * distancePerTrip,
         driven: 0,
         taken: 0,
         debt: 0,
     },
     Matthias = {
         name: "Matthias",
+        price: 0.20 * distancePerTrip,
+        driven: 0,
+        taken: 0,
+        debt: 0,
+    },
+    Arthur = {
+        name: "Arthur",
         price: 0.18 * distancePerTrip,
         driven: 0,
         taken: 0,
@@ -44,13 +51,6 @@ var passenger_data = [
     Robbe = {
         name: "Robbe",
         price: 0,
-        driven: 0,
-        taken: 0,
-        debt: 0,
-    },
-    Arthur = {
-        name: "Arthur",
-        price: 0.18 * distancePerTrip,
         driven: 0,
         taken: 0,
         debt: 0,
@@ -261,7 +261,7 @@ function drawLastDate() {
 
 function drawResults() {
 
-    nameSize = 20;
+    nameSize = 20*inputSize/50;
 
     let totalTrips = 0
 
@@ -391,6 +391,7 @@ function convertToUTC(unixtimestamp) {
 }
 
 function setup() {
+    inputSize *= windowWidth/1920
     logs = data.logs
     // create canvas
     createCanvas(windowWidth, windowHeight)
